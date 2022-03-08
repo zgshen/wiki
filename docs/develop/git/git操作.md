@@ -40,3 +40,6 @@ git commit --amend --author="zgshen <zguishen@foxmail.com>"
 
 continue 继续修改直到结束
 
+### git commit -a
+
+加了-a，在 commit 的时候，能帮你省一步 git add，但也只是对修改和删除文件有效，新文件还是要 git add，不然就是 untracked 状态。
