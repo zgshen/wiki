@@ -16,5 +16,12 @@ markdown_extensions:
 nav:
   - Home: 
     - Welcome: index.md
-  - Java: 
-    - 计算机基础: java/计算机基础.md
+  - Develop: 
+    - Java:
+      - 计算机基础: develop/java/计算机基础.md
+    - Git: 
+      - git操作: develop/git/git操作.md
+      - git注释规范: develop/git/git注释规范.md
+  - Lang:
+    - 资料: lang/资料.md
+    - 介词: lang/介词.md
