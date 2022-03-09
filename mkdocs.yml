@@ -22,6 +22,9 @@ nav:
     - Git: 
       - git操作: develop/git/git操作.md
       - git注释规范: develop/git/git注释规范.md
+    - Command:
+      - Windows 切换远程桌面: develop/command/Windows切换远程桌面.md
+      - code-server 部署: develop/command/code-server.md
   - Lang:
     - 资料: lang/资料.md
     - 介词: lang/介词.md
