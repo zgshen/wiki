@@ -7,6 +7,8 @@ theme:
     palette:
       primary: white
     favicon: https://zguishen.com/favicon.ico?v=1.02
+    font:
+      code: Monaco
 extra_css:
   - stylesheets/extra.css
 markdown_extensions:
@@ -18,7 +20,12 @@ nav:
     - Welcome: index.md
   - Develop: 
     - Java:
-      - 计算机基础: develop/java/计算机基础.md
+      - index: develop/java/index.md
+      - interview:
+        - 计算机基础: develop/java/interview/计算机基础.md
+    - Python:
+      - 爬取图片例子: develop/python/爬取图片例子.md
+      - Flask读取图片并返回前端: develop/python/flask读取图片.md
     - Git: 
       - git操作: develop/git/git操作.md
       - git注释规范: develop/git/git注释规范.md
