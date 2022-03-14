@@ -23,6 +23,19 @@ nav:
       - index: develop/java/index.md
       - interview:
         - 计算机基础: develop/java/interview/计算机基础.md
+        - Java 基础: develop/java/interview/Java基础.md
+        - Java内存模型和JVM: develop/java/interview/Java内存模型和JVM.md
+        - 并发和线程: develop/java/interview/并发和线程.md
+        - 集合框架: develop/java/interview/集合框架.md
+        - Spring: develop/java/interview/Spring.md
+        - Redis: develop/java/interview/Redis.md
+        - MQ: develop/java/interview/MQ.md
+        - 微服务: develop/java/interview/微服务.md
+        - 数据库: develop/java/interview/数据库.md
+        - Linux: develop/java/interview/Linux.md
+        - 数据结构与算法: develop/java/interview/数据结构与算法.md
+        - 设计模式: develop/java/interview/设计模式.md
+        - 系统设计: develop/java/interview/系统涉及.md
     - Python:
       - 爬取图片例子: develop/python/爬取图片例子.md
       - Flask读取图片并返回前端: develop/python/flask读取图片.md
