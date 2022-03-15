@@ -24,7 +24,7 @@ nav:
       - interview:
         - 计算机基础: develop/java/interview/计算机基础.md
         - Java 基础: develop/java/interview/Java基础.md
-        - Java内存模型和JVM: develop/java/interview/Java内存模型和JVM.md
+        - Java 内存模型和 JVM: develop/java/interview/Java内存模型和JVM.md
         - 并发和线程: develop/java/interview/并发和线程.md
         - 集合框架: develop/java/interview/集合框架.md
         - Spring: develop/java/interview/Spring.md
@@ -45,6 +45,9 @@ nav:
     - Command:
       - Windows 切换远程桌面: develop/command/Windows切换远程桌面.md
       - code-server 部署: develop/command/code-server.md
+      - 忘记root用户密码: develop/command/忘记root密码.md
+      - Widows RDP 远程连接 Linux i3 桌面: develop/command/Widows远程连接Linux i3桌面.md
+      - Linux磁盘相关: develop/command/Linux磁盘相关.md
   - Lang:
     - 资料: lang/资料.md
     - 介词: lang/介词.md
