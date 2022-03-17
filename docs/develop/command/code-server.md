@@ -38,26 +38,3 @@ server {
 
 }
 ```
-
-```java
-public class LambdaTest {
-
-    public LambdaTest() {
-    }
-    public LambdaTest(String str) {
-        //use param str to do something
-    }
-
-    public static void interfaceTest(SingleFncInterface singleFunInterface) {
-        singleFunInterface.doSomething("123");
-    }
-
-    public void simpleMenthod(String str) {
-        System.out.println("simple method. str is:");
-    }
-
-    public static void staticMenthod(String str) {
-        System.out.println("static menthod. str is:");
-    }
-}
-```

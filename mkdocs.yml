@@ -8,9 +8,10 @@ theme:
       primary: white
     favicon: https://zguishen.com/favicon.ico?v=1.02
     font:
+      text: Roboto
       code: Monaco
 extra_css:
-  - stylesheets/extra.css
+  - assets/css/extra.css
 markdown_extensions:
   - pymdownx.highlight:
       anchor_linenums: true
@@ -35,7 +36,7 @@ nav:
         - Linux: develop/java/interview/Linux.md
         - 数据结构与算法: develop/java/interview/数据结构与算法.md
         - 设计模式: develop/java/interview/设计模式.md
-        - 系统设计: develop/java/interview/系统涉及.md
+        - 系统设计: develop/java/interview/系统设计.md
     - Python:
       - 爬取图片例子: develop/python/爬取图片例子.md
       - Flask读取图片并返回前端: develop/python/flask读取图片.md
@@ -43,10 +44,11 @@ nav:
       - git操作: develop/git/git操作.md
       - git注释规范: develop/git/git注释规范.md
     - Command:
+      - apt 命令: develop/command/apt命令.md
       - Windows 切换远程桌面: develop/command/Windows切换远程桌面.md
       - code-server 部署: develop/command/code-server.md
       - 忘记root用户密码: develop/command/忘记root密码.md
-      - Widows RDP 远程连接 Linux i3 桌面: develop/command/Widows远程连接Linux i3桌面.md
+      - Widows RDP 远程连接 Linux: develop/command/Widows远程连接Linux i3桌面.md
       - Linux磁盘相关: develop/command/Linux磁盘相关.md
   - Lang:
     - 资料: lang/资料.md
