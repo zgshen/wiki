@@ -32,7 +32,7 @@ nav:
         - Redis: develop/java/interview/Redis.md
         - MQ: develop/java/interview/MQ.md
         - 微服务: develop/java/interview/微服务.md
-        - 数据库: develop/java/interview/数据库.md
+        - 数据库: develop/java/interview/Database.md
         - Linux: develop/java/interview/Linux.md
         - 数据结构与算法: develop/java/interview/数据结构与算法.md
         - 设计模式: develop/java/interview/设计模式.md
