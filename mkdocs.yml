@@ -37,6 +37,8 @@ nav:
         - 数据结构与算法: develop/java/interview/数据结构与算法.md
         - 设计模式: develop/java/interview/设计模式.md
         - 系统设计: develop/java/interview/系统设计.md
+      - issues:
+        - JDK9限制反射功能的错误解决方法: JDK9限制反射功能.md
     - Python:
       - 爬取图片例子: develop/python/爬取图片例子.md
       - Flask读取图片并返回前端: develop/python/flask读取图片.md
