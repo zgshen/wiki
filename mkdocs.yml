@@ -45,6 +45,7 @@ nav:
     - Git: 
       - git操作: develop/git/git操作.md
       - git注释规范: develop/git/git注释规范.md
+      - git拉取最后一次提交版本: develop/git/拉取最后一次提交版本.md
     - Command:
       - apt 命令: develop/command/apt命令.md
       - Windows 切换远程桌面: develop/command/Windows切换远程桌面.md
@@ -52,6 +53,7 @@ nav:
       - 忘记root用户密码: develop/command/忘记root密码.md
       - Widows RDP 远程连接 Linux: develop/command/Widows远程连接Linux i3桌面.md
       - Linux磁盘相关: develop/command/Linux磁盘相关.md
+      - Linux设置: develop/command/Linux设置.md
   - Lang:
     - 资料: lang/资料.md
     - 介词: lang/介词.md

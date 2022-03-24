@@ -13,5 +13,6 @@
 
 最后注意选择 boot 所在的分区作为启动引导其设备（Device for boot loader installation）。
 
+安装参考 [WIN10安装Ubuntu20双系统](https://blog.csdn.net/qq_33187136/article/details/113924497)
 
 
