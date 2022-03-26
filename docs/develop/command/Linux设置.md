@@ -137,3 +137,19 @@ sudo apt install libglib2.0-dev-bin
 ```bash
 sudo apt-get autoremove --purge gnome-shell-extension-ubuntu-dock -y
 ```
+
+### Chrome 字体
+
+Minimum 调到14，根据需要设置，最小字体能让有些字体太小的网站容易看。
+
+Standard font 字体设置为 Noto Sans Mono CJK SC（其实就是思源黑体），可以解决有些网站中文字体大小不一的情况。
+
+### 删除桌面快捷方式
+
+打开 Tweaks（优化），点击 Extensions-Desktop icons 设置按钮，把不要的桌面图标取消选中就行。
+
+### 监控插件
+
+[Vitals](https://extensions.gnome.org/extension/1460/vitals/)
+或者
+[indicator-sysmonitor](https://github.com/fossfreedom/indicator-sysmonitor)
