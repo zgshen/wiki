@@ -153,3 +153,15 @@ Standard font 字体设置为 Noto Sans Mono CJK SC（其实就是思源黑体�
 [Vitals](https://extensions.gnome.org/extension/1460/vitals/)
 或者
 [indicator-sysmonitor](https://github.com/fossfreedom/indicator-sysmonitor)
+
+### 顶栏透明
+
+[transparent-topbar](https://extensions.gnome.org/extension/1765/transparent-topbar/)
+
+### 设置截图快捷键
+
+Setting->Devices->Keyboard 打开快捷键设置，拉倒最下面加号点击添加快捷键
+
+Name: open gnome screenshot  
+Command: gnome-screenshot -i  
+Shortcut: 按 Shift+Super（win）+S，就跟 Windows 下的截图一样了
