@@ -31,9 +31,9 @@ sudo apt-get install openjdk-11-jdk openjdk-11-source
 sudo apt-get install openjdk-17-jdk openjdk-17-source
 ```
 
-### 创建 IDEA 应用图标
+### 创建 IDEA 和 Obsidian 应用图标
 
-编辑 `vi /usr/share/applications/idea.desktop`
+编辑 `sudo vi /usr/share/applications/idea.desktop`
 ```bash
 [Desktop Entry]
 Name=IntelliJ IDEA
@@ -44,6 +44,17 @@ Terminal=false
 Type=Application
 Categories=Developer;
 ```
+
+编辑 `sudo vi /usr/share/applications/obsidian.desktop`
+```bash
+[Desktop Entry]
+Name=Obsidian
+Comment=Obsidian
+Exec=/home/nathan/app/obsidian/Obsidian-0.14.2.AppImage
+Icon=/home/nathan/app/obsidian/favicon.ico
+Terminal=false
+Type=Application
+Categories=Developer;
 
 ### 安装 VirtualBox
 
@@ -123,7 +134,9 @@ Deviced-insert Guest Additions CD image 增强工具点了没反应，直接到 
 
 下载解压后执行命令设置，详细见 GitHub 说明
 ```bash
+# 背景设置为图片
 sudo ./ubuntu-gdm-set-background --image /home/user/backgrounds/image.jpg
+# 背景设置颜色
 sudo ./ubuntu-gdm-set-background --color \#aAbBcC
 ```
 缺的包安装
@@ -165,3 +178,7 @@ Setting->Devices->Keyboard 打开快捷键设置，拉倒最下面加号点击�
 Name: open gnome screenshot  
 Command: gnome-screenshot -i  
 Shortcut: 按 Shift+Super（win）+S，就跟 Windows 下的截图一样了
+
+### 云同步
+
+文件云同步有 Linux 版的有 Dropbox 或者坚果云，Dropbox 是被墙的，用得少的话坚果云就够用了。坚果云在 Ubuntu 下要用源代码编译安装，deb 方式安装的打不开的，版本比较老了，地址 https://www.jianguoyun.com/s/downloads/linux
