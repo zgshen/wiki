@@ -182,3 +182,8 @@ Shortcut: 按 Shift+Super（win）+S，就跟 Windows 下的截图一样了
 ### 云同步
 
 文件云同步有 Linux 版的有 Dropbox 或者坚果云，Dropbox 是被墙的，用得少的话坚果云就够用了。坚果云在 Ubuntu 下要用源代码编译安装，deb 方式安装的打不开的，版本比较老了，地址 https://www.jianguoyun.com/s/downloads/linux
+
+### 番茄钟
+
+gnome 插件
+[Time ++](https://extensions.gnome.org/extension/1238/time/)
