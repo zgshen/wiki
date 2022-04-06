@@ -109,7 +109,7 @@ vboxdrv.sh: Starting VirtualBox services.
 vboxdrv.sh: Building VirtualBox kernel modules.
 ```
 
-#### 增强工具
+### 增强工具
 
 Deviced-insert Guest Additions CD image 增强工具点了没反应，直接到 http://download.virtualbox.org/virtualbox/ 下载对应版本的 addition，如 VBoxGuestAdditions_6.1.2.iso，打开选择对应系统版本安装。
 
