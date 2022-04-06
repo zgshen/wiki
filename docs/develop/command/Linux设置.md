@@ -11,6 +11,8 @@
 /home   逻辑分区 199G
 ```
 
+boot 直接给个1G，太小的话升级会出问题，home 放自己的文件，分出来重装省事点。swap 分区不需要，Ubuntu 会默认创建一个2G的 swapfile 来用的。
+
 最后注意选择 boot 所在的分区作为启动引导其设备（Device for boot loader installation）。
 
 安装参考 [WIN10安装Ubuntu20双系统](https://blog.csdn.net/qq_33187136/article/details/113924497)
@@ -187,3 +189,54 @@ Shortcut: 按 Shift+Super（win）+S，就跟 Windows 下的截图一样了
 
 gnome 插件
 [Time ++](https://extensions.gnome.org/extension/1238/time/)
+
+### 全局去除 title bar 插件
+
+
+### 禁用 swap
+
+安装系统的时候没有设置 swap 分区，但是 Ubuntu 还是会默认在根目录下给系统创建了一个2G的 swapfile。
+```bash
+# nathan @ nathan-tp in ~ [20:06:59]
+$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:           31Gi       3.8Gi        22Gi       605Mi       4.5Gi        26Gi
+Swap:         2.0Gi          0B       2.0Gi
+
+# nathan @ nathan-tp in / [21:42:22] 
+$ ll | grep swap
+-rw-------   1 root root 2.0G Mar 25 02:11 swapfile
+```
+
+内存多的就不用开 swap 了，关闭命令：
+```bash
+# disable all swaps from /proc/swaps
+sudo swapoff -a
+
+# or execute this commond
+sudo swapoff /swapfile 
+```
+
+没了
+```bash
+# nathan @ nathan-tp in ~ [21:55:17] 
+$ free -h
+              total        used        free      shared  buff/cache   available
+Mem:           31Gi       4.5Gi        21Gi       780Mi       4.8Gi        25Gi
+Swap:            0B          0B          0B
+```
+
+修改配置：
+```bash
+sudo vi /etc/fstab
+```
+
+注释 /swapfile 这一行;
+```bash
+#/swapfile                                 none            swap    sw              0       0
+```
+
+最后把 swapfile 删了：
+```bash
+sudo rm /swapfile
+```
