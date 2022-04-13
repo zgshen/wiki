@@ -240,3 +240,26 @@ sudo vi /etc/fstab
 ```bash
 sudo rm /swapfile
 ```
+
+### 自动挂载磁盘
+
+运行如下命令查看硬盘分区：
+
+sudo blkid
+看输出找到自己需要挂载的盘，比如这里要挂载的是 c 盘 /dev/sdb1 和 d 盘 /dev/sda2
+
+```
+/dev/sdb1: LABEL="win-c" UUID="96A8CBEBA8CBC7C7" TYPE="ntfs" PARTUUID="995606b6-6b82-7ed4-84e7-007d680f31d3"
+/dev/sdb2: UUID="0C38-06FF" TYPE="vfat" PARTUUID="dc885421-8944-2273-207d-3685601c7169"
+/dev/sda1: PARTLABEL="Microsoft reserved partition" PARTUUID="140f0f24-f5ff-4ea3-b95e-cd12128e0d58"
+/dev/sda2: LABEL="win-d" UUID="04BECAB2BECA9C14" TYPE="ntfs" PARTLABEL="Basic data partition" PARTUUID="9a67d1d2-7618-4173-a9d8-d05bf45e924f"
+```
+
+修改配置文件 sudo vi /etc/fstab 最后加上
+
+```
+# Windows disks
+/dev/sdb1                      /media/nathan/win-c
+/dev/sda2                      /media/nathan/win-d
+重启系统完事
+```
