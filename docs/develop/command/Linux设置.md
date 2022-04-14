@@ -192,6 +192,9 @@ gnome 插件
 
 ### 全局去除 title bar 插件
 
+[unite](https://extensions.gnome.org/extension/1287/unite/)
+
+IDEA 和 VS Code 的这类应用的标题都可以去掉。
 
 ### 禁用 swap
 
