@@ -42,3 +42,15 @@ tmux split-window
 tmux split-window -h
 ```
 
+重命名 dev 会话名称为 nemdev
+```bash
+tmux rename-session -t dev newdev
+```
+
+关闭 session
+```bash
+# 关闭 test 会话
+tmux kill-session -t test
+# 关闭服务器，所有的会话都将关闭
+tmux kill-server 
+```
