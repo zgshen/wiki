@@ -56,6 +56,7 @@ nav:
       - Linux设置: develop/command/Linux设置.md
       - 快捷键杂项: develop/command/快捷键杂项.md
       - Tmux 终端管理工具: develop/command/Tmux终端管理工具.md
+      - JMeter 压测工具: develop/command/JMeter.md
   - Lang:
     - 资料: lang/资料.md
     - 介词: lang/介词.md
