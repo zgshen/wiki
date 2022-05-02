@@ -58,7 +58,8 @@ nav:
       - Tmux 终端管理工具: develop/command/Tmux终端管理工具.md
       - JMeter 压测工具: develop/command/JMeter.md
     - 剑指Offer:
-      - 单例: develop/剑指Offer/single-instance.md
+      - 2单例: develop/剑指Offer/02-single-instance.md
+      - 3数组中重复的数字: develop/剑指Offer/03-duplicate.md
     - Android:
       - SDK 安装: develop/android/SDK安装.md
   - Lang:

@@ -58,6 +58,20 @@ Terminal=false
 Type=Application
 Categories=Developer;
 
+### JetBrain 软件下 fcitx 输入法候选框不跟随鼠标修复设置
+
+https://github.com/RikudouPatrickstar/JetBrainsRuntime-for-Linux-x64 下载 JDk 并解压缩，修改 idea.sh 在前面加上下载的 JDK 所在目录：
+
+```bash
+# fix sogou issue
+export IDEA_JDK=/home/nathan/app/jdk/jbr
+```
+
+如果是 android studio 那就是
+```bash
+export STUDIO_JDK=/home/nathan/app/jdk/jbr
+```
+
 ### 安装 VirtualBox
 
 下载 deb 文件安装
@@ -195,6 +209,12 @@ gnome 插件
 [unite](https://extensions.gnome.org/extension/1287/unite/)
 
 IDEA 和 VS Code 的这类应用的标题都可以去掉。
+
+### 方便查看已打开应用的插件
+
+[WindowOverlay Icons](https://extensions.gnome.org/extension/302/windowoverlay-icons/)
+
+按 super 键可以看到已打开的所有应用的窗口，但是很难分辨哪个窗口是哪个应用，这个插件给窗口加上了 icon，让分辨窗口应用变得容易。
 
 ### 禁用 swap
 
