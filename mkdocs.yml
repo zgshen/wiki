@@ -60,6 +60,7 @@ nav:
     - 剑指Offer:
       - 2单例: develop/剑指Offer/02-single-instance.md
       - 3数组中重复的数字: develop/剑指Offer/03-duplicate.md
+      - 4二维数组的查找: develop/剑指Offer/04find-number-in-2d-array.md
     - Android:
       - SDK 安装: develop/android/SDK安装.md
   - Lang:

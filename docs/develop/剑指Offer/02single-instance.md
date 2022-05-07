@@ -133,13 +133,4 @@ public class SingletonEnum {
 }
 ```
 
-枚举类型是线程安全的，并且只会装载一次。并且枚举类型是所用单例实现中唯一一种不会被破坏（其他方式反射可破坏）的单例实现模式。
-
-想要阻止单例破坏，可以在构造方法中进行判断，若已有实例, 则阻止生成新的实例。
-```java
-private SingletonObject1(){
-    if (instance !=null){
-        throw new RuntimeException("实例已经存在，请通过 getInstance()方法获取");
-    }
-}
-```
+枚举类型是线程安全的，并且只会装载一次。
