@@ -7,6 +7,9 @@
 
 
 使用集合的方法。
+- 时间复杂度O(n)：遍历数组O(n)，哈希表查找添加O(1)，总时间复杂度O(n)
+- 空间复杂度O(n)：HashSet 占用空间O(n)
+
 ```java
 public int findDuplicate(int[] nums) {
     Set<Integer> set = new HashSet<>();
@@ -19,6 +22,9 @@ public int findDuplicate(int[] nums) {
 ```
 
 原地交换法。
+- 时间复杂度O(N)：遍历数组O(N)，遍历判断和交换O(1)，总时间复杂度O(N)
+- 空间复杂度O(1)：使用常数复杂度额外空间
+
 ```java
 public int findDuplicate(int[] nums) {
     if (nums == null || nums.length==0) return -1;
