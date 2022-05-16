@@ -12,4 +12,6 @@ body {
 
 Hi, This is zguishen's wiki.
 
-My blog [https://zguishen.com](https://zguishen.com)
+- Blog [https://zguishen.com](https://zguishen.com)
+- Notion [https://notion.zguishen.com](https://notion.zguishen.com)
+- Navigation [https://nav.zguishen.com](https://nav.zguishen.com)
