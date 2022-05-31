@@ -48,6 +48,7 @@ nav:
     - Python:
       - 爬取图片例子: develop/python/爬取图片例子.md
       - Flask读取图片并返回前端: develop/python/flask读取图片.md
+      - Hexo迁移Hugo文件处理: develop/python/hexo迁移hugo文件处理.md
     - Git: 
       - git操作: develop/git/git操作.md
       - git注释规范: develop/git/git注释规范.md
@@ -63,6 +64,8 @@ nav:
       - 快捷键杂项: develop/command/快捷键杂项.md
       - Tmux 终端管理工具: develop/command/Tmux终端管理工具.md
       - JMeter 压测工具: develop/command/JMeter.md
+      - 平铺式桌面管理器 i3wm: develop/command/i3wm.md
+      - vi/vim 编辑器: develop/command/vi.md
     - 剑指Offer:
       - 2单例: develop/剑指Offer/02-single-instance.md
       - 3数组中重复的数字: develop/剑指Offer/03-duplicate.md
