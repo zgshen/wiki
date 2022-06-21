@@ -33,6 +33,18 @@ sudo apt install i3lock
 bindsym $mod+Tab exec i3lock # Win+Tab 锁屏
 ```
 
+### 修改配置
+
+要修改默认的一些配置文件，可以把配置文件复制到当前用户目录下再修改。
+
+比如 i3 config: /etc/regolith/i3/config 到 ~/.config/regolith/i3/config
+
+还有 i3 bar status indicator: /usr/share/i3xrocks 到 ~/.config/regolith/i3xrocks
+
+其他组件也都一样，或者可以干脆把整个 /etc/regolith 文件夹拷贝到 ~/.config/regolith 更直接。
+
+修改样式的一般用 `regolith-look refresh` 就能看到效果了。
+
 ### 快捷键
 
 regolith 快捷键 [https://regolith-linux.org/docs/reference/keybindings/](https://regolith-linux.org/docs/reference/keybindings/)

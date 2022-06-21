@@ -7,7 +7,7 @@
 
 ### 分析
 
-使用动态规划比较容易理解。。
+使用动态规划。
 
 参考 https://leetcode.cn/problems/jian-sheng-zi-lcof/solution/mian-shi-ti-14-i-jian-sheng-zi-tan-xin-si-xiang-by/1391865
 
@@ -39,12 +39,40 @@ class Solution {
             //小于等于 i-2 是因为最后是 j*1 等于 j，没意义
             for (int j=1; j<=i-2; j++) {
                 //两段直接相乘，或者i-j继续分段，比较取最大值
-                int tmp = Math.max(dp[i-j]*j, (i-j)*j);
+                //int tmp = Math.max(dp[i-j]*j, (i-j)*j);
+                int tmp = Math.max(dp[i-j], (i-j)) * j;
                 //和前一个dp比较取最大值
                 dp[i] = Math.max(tmp, dp[i]);
             }
         }
         return dp[n];
+    }
+}
+```
+
+或者使用深度递归。
+
+```java
+class Solution {
+
+    int maxRes = 1;
+
+    public int cuttingRope(int n) {
+        dfs(1, 1, n);
+        return maxnum;
+    }
+
+    /**
+     * @param start 每次剪去长度
+     * @param res 乘积结果
+     * @param n 剩余长度
+     */
+    void dfs(int start, int res, int n) {
+        //不再剪了或者剩下1，得到乘积结果，对比取最大
+        if (n==0 || n==1) maxRes = Math.max(maxRes, res);
+        for (int i=0; i<n-1; i++) {
+            dfs(start+i, res, n-start-i);
+        }
     }
 }
 ```

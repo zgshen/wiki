@@ -57,6 +57,9 @@ Icon=/home/nathan/app/obsidian/favicon.ico
 Terminal=false
 Type=Application
 Categories=Developer;
+```
+
+若是需要开机自动启动程序，则需把.desktop文件放置在~/.config/autostart/
 
 ### JetBrain 软件下 fcitx 输入法候选框不跟随鼠标修复设置
 
@@ -286,3 +289,22 @@ sudo blkid
 /dev/sda2                      /media/nathan/win-d
 重启系统完事
 ```
+
+### Nvidia 驱动问题
+
+nouveau是Ubuntu的默认显卡驱动，个人电脑的显卡是NVIDIA，之前经常休眠后唤醒出现错误:
+
+```
+nouveau 0000:02:00:0: bus: MMIO read of 00000000 FAULT at 6013d4 [PRIVRING]
+```
+
+所以想换成NVIDIA驱动。直接到Software&Updates的Additional Driver中选择想要安装的驱动就行。
+
+### 键位修改
+
+已经安装Tweaks打开，到Keyboard&Mouse，Compose key开关打开，选择menu，然后Additional Layout Options - Caps Lock behavior，选择Make Caps Lock an additional Menu key。
+
+然后右键输入法图标，打开配置，Global Config，Trigger Input Method，添加上Menu键位，原来的Ctrl+Space留着吧不用动。
+
+最后再设置搜狗输入法，高级-中英文切换选择无。输入法只留搜狗和系统的英文，现在写代码的时候就不会因为无意按到Shift键就中英文乱切换，想切换单独用Caps Lock键。
+
