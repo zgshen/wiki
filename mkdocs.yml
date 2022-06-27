@@ -80,6 +80,7 @@ nav:
       - 13机器人的运动范围: develop/剑指Offer/13-moving-count.md
       - 16数值的整数次方: develop/剑指Offer/16-pow.md
       - 18删除链表的节点: develop/剑指Offer/18-delete-node.md
+      - 62约瑟夫问题: develop/剑指Offer/62-Josephus.md
     - Android:
       - SDK 安装: develop/android/SDK安装.md
   - Lang:
