@@ -1,0 +1,1998 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+      <link rel="icon" href="https://zguishen.com/favicon.ico?v=1.02">
+      <meta name="generator" content="mkdocs-1.3.0, mkdocs-material-8.3.8">
+    
+    
+      
+        <title>Redis - zguishen's wiki</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CMonaco:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Monaco"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../../assets/css/extra.css">
+    
+    <script>__md_scope=new URL("../../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="">
+  
+    
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#redis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../../.." title="zguishen&#39;s wiki" class="md-header__button md-logo" aria-label="zguishen's wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            zguishen's wiki
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Redis
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="Clear" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../.." class="md-tabs__link">
+        Home
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../" class="md-tabs__link md-tabs__link--active">
+        Develop
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../../lang/%E8%B5%84%E6%96%99/" class="md-tabs__link">
+        Lang
+      </a>
+    </li>
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../../.." title="zguishen&#39;s wiki" class="md-nav__button md-logo" aria-label="zguishen's wiki" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54Z"/></svg>
+
+    </a>
+    zguishen's wiki
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          Home
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Home" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          Home
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../.." class="md-nav__link">
+        Welcome
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          Develop
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Develop" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          Develop
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          Java
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Java" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          Java
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        index
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_2" type="checkbox" id="__nav_2_1_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_2">
+          interview
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="interview" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_2">
+          <span class="md-nav__icon md-icon"></span>
+          interview
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%AE%A1%E7%AE%97%E6%9C%BA%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        计算机基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Java%E5%9F%BA%E7%A1%80/" class="md-nav__link">
+        Java 基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B%E5%92%8CJVM/" class="md-nav__link">
+        Java 内存模型和 JVM
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%B9%B6%E5%8F%91%E5%92%8C%E7%BA%BF%E7%A8%8B/" class="md-nav__link">
+        并发和线程
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6/" class="md-nav__link">
+        集合框架
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Spring/" class="md-nav__link">
+        Spring
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          Redis
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        Redis
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 支持五种数据类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 单线程但性能依然好原因
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 持久化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 过期键删除策略
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 常用客户端
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-key" class="md-nav__link">
+    6. 处理过大量的key同一时间过期吗？需要注意什么？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-redis" class="md-nav__link">
+    7. Redis 适用场景
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-keykeyskeyscan" class="md-nav__link">
+    8. key搜索禁止使用keys命令（key很多时搜索会导致线程堵塞），应该使用scan命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    9. 分布式锁
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-pipeline" class="md-nav__link">
+    10. pipeline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    11. 缓存穿透、击穿和雪崩
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-cluster" class="md-nav__link">
+    12. 主从、哨兵和 cluster 集群
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-redis" class="md-nav__link">
+    13. Redis集群不可用（集群三主三从，至少需要三台机器，互为主从，一台服务器宕机还能用）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    14. 消息队列实现方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    15. 延迟消息实现
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-sortes-set" class="md-nav__link">
+    16. Sortes Set(有序列表)实现，压缩列表和跳表
+  </a>
+  
+    <nav class="md-nav" aria-label="16. Sortes Set(有序列表)实现，压缩列表和跳表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161-ziplist" class="md-nav__link">
+    16.1. 压缩列表 ziplist
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162-skiplist" class="md-nav__link">
+    16.2. 跳表 skiplist
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    17. 一致性哈希和哈希槽
+  </a>
+  
+    <nav class="md-nav" aria-label="17. 一致性哈希和哈希槽">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#171-hash-0-232" class="md-nav__link">
+    17.1. 一致性哈希（一致性 hash 是一个0-2^32的闭合圆）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#172-redis-cluster-21416384" class="md-nav__link">
+    17.2. 哈希槽（redis cluster 一共有2^14=16384个槽）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-redis" class="md-nav__link">
+    18. Redis 使用场景
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../MQ/" class="md-nav__link">
+        MQ
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E5%BE%AE%E6%9C%8D%E5%8A%A1/" class="md-nav__link">
+        微服务
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Database/" class="md-nav__link">
+        数据库
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../Linux/" class="md-nav__link">
+        Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../数据结构与算法.md" class="md-nav__link">
+        数据结构与算法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F/" class="md-nav__link">
+        设计模式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1/" class="md-nav__link">
+        系统设计
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_1_3" type="checkbox" id="__nav_2_1_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1_3">
+          issues
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="issues" data-md-level="3">
+        <label class="md-nav__title" for="__nav_2_1_3">
+          <span class="md-nav__icon md-icon"></span>
+          issues
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../issue/JDK9%E9%99%90%E5%88%B6%E5%8F%8D%E5%B0%84%E5%8A%9F%E8%83%BD/" class="md-nav__link">
+        JDK9限制反射功能的错误解决方法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          Python
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Python" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          Python
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/%E7%88%AC%E5%8F%96%E5%9B%BE%E7%89%87%E4%BE%8B%E5%AD%90/" class="md-nav__link">
+        爬取图片例子
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/flask%E8%AF%BB%E5%8F%96%E5%9B%BE%E7%89%87/" class="md-nav__link">
+        Flask读取图片并返回前端
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../python/hexo%E8%BF%81%E7%A7%BBhugo%E6%96%87%E4%BB%B6%E5%A4%84%E7%90%86/" class="md-nav__link">
+        Hexo迁移Hugo文件处理
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_3" type="checkbox" id="__nav_2_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_3">
+          Git
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Git" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_3">
+          <span class="md-nav__icon md-icon"></span>
+          Git
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../git/git%E6%93%8D%E4%BD%9C/" class="md-nav__link">
+        git操作
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../git/git%E6%B3%A8%E9%87%8A%E8%A7%84%E8%8C%83/" class="md-nav__link">
+        git注释规范
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../git/%E6%8B%89%E5%8F%96%E6%9C%80%E5%90%8E%E4%B8%80%E6%AC%A1%E6%8F%90%E4%BA%A4%E7%89%88%E6%9C%AC/" class="md-nav__link">
+        git拉取最后一次提交版本
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_4" type="checkbox" id="__nav_2_4" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_4">
+          Command
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Command" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_4">
+          <span class="md-nav__icon md-icon"></span>
+          Command
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../command/apt%E5%91%BD%E4%BB%A4/" class="md-nav__link">
+        apt 命令
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../command/Windows%E5%88%87%E6%8D%A2%E8%BF%9C%E7%A8%8B%E6%A1%8C%E9%9D%A2/" class="md-nav__link">
+        Windows 切换远程桌面
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../command/code-server/" class="md-nav__link">
+        code-server 部署
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../command/%E5%BF%98%E8%AE%B0root%E5%AF%86%E7%A0%81/" class="md-nav__link">
+        忘记root用户密码
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../command/Widows远程连接Linux i3桌面.md" class="md-nav__link">
+        Widows RDP 远程连接 Linux
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../command/Linux%E7%A3%81%E7%9B%98%E7%9B%B8%E5%85%B3/" class="md-nav__link">
+        Linux磁盘相关
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../command/Linux%E8%AE%BE%E7%BD%AE/" class="md-nav__link">
+        Linux设置
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../command/%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%9D%82%E9%A1%B9/" class="md-nav__link">
+        快捷键杂项
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../command/Tmux%E7%BB%88%E7%AB%AF%E7%AE%A1%E7%90%86%E5%B7%A5%E5%85%B7/" class="md-nav__link">
+        Tmux 终端管理工具
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../command/JMeter/" class="md-nav__link">
+        JMeter 压测工具
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../command/i3wm/" class="md-nav__link">
+        平铺式桌面管理器 i3wm
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../command/vi/" class="md-nav__link">
+        vi/vim 编辑器
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_5" type="checkbox" id="__nav_2_5" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_5">
+          剑指Offer
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="剑指Offer" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_5">
+          <span class="md-nav__icon md-icon"></span>
+          剑指Offer
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%89%91%E6%8C%87Offer/02-single-instance/" class="md-nav__link">
+        2单例
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%89%91%E6%8C%87Offer/03-duplicate/" class="md-nav__link">
+        3数组中重复的数字
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%89%91%E6%8C%87Offer/04-find-number-in-2d-array/" class="md-nav__link">
+        4二维数组的查找
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%89%91%E6%8C%87Offer/05-replace-space/" class="md-nav__link">
+        5替换空格
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%89%91%E6%8C%87Offer/06-reverse-print/" class="md-nav__link">
+        6从尾到头打印链表
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%89%91%E6%8C%87Offer/07-construct-binary-tree/" class="md-nav__link">
+        7重建二叉树
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%89%91%E6%8C%87Offer/09-two-stack-queue/" class="md-nav__link">
+        9用两个栈实现队列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%89%91%E6%8C%87Offer/10-fibonacci/" class="md-nav__link">
+        10斐波那契数列
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%89%91%E6%8C%87Offer/11-find-min-in-array/" class="md-nav__link">
+        11旋转数组中的最小数字
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%89%91%E6%8C%87Offer/12-word-search/" class="md-nav__link">
+        12矩阵中的路径
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%89%91%E6%8C%87Offer/13-moving-count/" class="md-nav__link">
+        13机器人的运动范围
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%89%91%E6%8C%87Offer/16-pow/" class="md-nav__link">
+        16数值的整数次方
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%89%91%E6%8C%87Offer/18-delete-node/" class="md-nav__link">
+        18删除链表的节点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../%E5%89%91%E6%8C%87Offer/62-Josephus/" class="md-nav__link">
+        62约瑟夫问题
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_2_6" type="checkbox" id="__nav_2_6" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_6">
+          Android
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Android" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_6">
+          <span class="md-nav__icon md-icon"></span>
+          Android
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../android/SDK%E5%AE%89%E8%A3%85/" class="md-nav__link">
+        SDK 安装
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" >
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          Lang
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="Lang" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          Lang
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lang/%E8%B5%84%E6%96%99/" class="md-nav__link">
+        资料
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../../lang/%E4%BB%8B%E8%AF%8D/" class="md-nav__link">
+        介词
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#1" class="md-nav__link">
+    1. 支持五种数据类型
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#2" class="md-nav__link">
+    2. 单线程但性能依然好原因
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#3" class="md-nav__link">
+    3. 持久化
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#4" class="md-nav__link">
+    4. 过期键删除策略
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#5" class="md-nav__link">
+    5. 常用客户端
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#6-key" class="md-nav__link">
+    6. 处理过大量的key同一时间过期吗？需要注意什么？
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#7-redis" class="md-nav__link">
+    7. Redis 适用场景
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#8-keykeyskeyscan" class="md-nav__link">
+    8. key搜索禁止使用keys命令（key很多时搜索会导致线程堵塞），应该使用scan命令
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#9" class="md-nav__link">
+    9. 分布式锁
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#10-pipeline" class="md-nav__link">
+    10. pipeline
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    11. 缓存穿透、击穿和雪崩
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12-cluster" class="md-nav__link">
+    12. 主从、哨兵和 cluster 集群
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13-redis" class="md-nav__link">
+    13. Redis集群不可用（集群三主三从，至少需要三台机器，互为主从，一台服务器宕机还能用）
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    14. 消息队列实现方式
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    15. 延迟消息实现
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16-sortes-set" class="md-nav__link">
+    16. Sortes Set(有序列表)实现，压缩列表和跳表
+  </a>
+  
+    <nav class="md-nav" aria-label="16. Sortes Set(有序列表)实现，压缩列表和跳表">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161-ziplist" class="md-nav__link">
+    16.1. 压缩列表 ziplist
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162-skiplist" class="md-nav__link">
+    16.2. 跳表 skiplist
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#17" class="md-nav__link">
+    17. 一致性哈希和哈希槽
+  </a>
+  
+    <nav class="md-nav" aria-label="17. 一致性哈希和哈希槽">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#171-hash-0-232" class="md-nav__link">
+    17.1. 一致性哈希（一致性 hash 是一个0-2^32的闭合圆）
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#172-redis-cluster-21416384" class="md-nav__link">
+    17.2. 哈希槽（redis cluster 一共有2^14=16384个槽）
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#18-redis" class="md-nav__link">
+    18. Redis 使用场景
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+
+
+<h1 id="redis">Redis</h1>
+<h3 id="1">1. 支持五种数据类型</h3>
+<ul>
+<li>string 字符串  （value最大存储512M）</li>
+<li>hash 哈希（元素最多2^32-1）</li>
+<li>list 列表（元素最多2^32-1）</li>
+<li>set 集合（元素最多2^32-1）</li>
+<li>sorted set 有序集合（同set）</li>
+</ul>
+<h3 id="2">2. 单线程但性能依然好原因</h3>
+<ul>
+<li>单线程避免线程切换的消耗（redis6已支持多线程）</li>
+<li>基于内存，内存读写都很快 </li>
+<li>使用高性能数据结构，比如 hash 和跳表</li>
+<li>使用非阻塞的IO多路复用机制</li>
+</ul>
+<h3 id="3">3. 持久化</h3>
+<ul>
+<li>
+<p>RDB（Redis Database）：通过快照的方式在指定时间间隔内将内存中的数据集写入磁盘。单文件灾难恢复操作简单，性能较高；由于是每隔一段时间持久化，故障可能导致内存中未写入磁盘的数据丢失。</p>
+</li>
+<li>
+<p>AOF（Append Only File）：以日志的形式记录每一个写和删除操作，查询不会记录，以文本的方式记录。由于对日志文件的写入操作是 append 模式，宕机也不会破坏日志文件中已经存在的内容，在 Redis 下一次启动可以用 redis-check-aof 工具解决数据一致性问题；缺点是持久化文件较大，恢复速度慢。</p>
+</li>
+</ul>
+<h3 id="4">4. 过期键删除策略</h3>
+<ul>
+<li>定时删除（创建定时器达到过期时间删除）</li>
+<li>惰性删除（当获取键时才检查是否删除）</li>
+<li>定期删除（定期统一检查删除）</li>
+</ul>
+<p>redis采用惰性删除和定期删除结合的策略</p>
+<h3 id="5">5. 常用客户端</h3>
+<p>Redisson、Jedis、Lettuce</p>
+<h3 id="6-key">6. 处理过大量的key同一时间过期吗？需要注意什么？</h3>
+<p>可能导致Redis短时间卡顿现象，量大时还可能出现缓存雪崩。过期时间不要求很精确的话，在时间上加一个随机值，使过期时间分散一些</p>
+<h3 id="7-redis">7. Redis 适用场景</h3>
+<ul>
+<li>数据缓存</li>
+<li>计数器、排行榜</li>
+<li>集合队列，发布和订阅</li>
+</ul>
+<h3 id="8-keykeyskeyscan">8. key搜索禁止使用keys命令（key很多时搜索会导致线程堵塞），应该使用scan命令</h3>
+<p>scan 命令语法
+<div class="highlight"><pre><span></span><code><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>SCAN cursor <span class="o">[</span>MATCH pattern<span class="o">]</span> <span class="o">[</span>COUNT count<span class="o">]</span>
+</code></pre></div>
+- cursor - 游标。
+- pattern - 匹配的模式。
+- count - 指定从数据集里返回多少元素，默认值为 10 。</p>
+<p><code>scan 0</code> 返回游标和数据列表，如果游标是0表示没有更多数据了，不是0的话比如是15，那么使用 <code>scan 15</code> 继续遍历剩余数据，以此类推。</p>
+<h3 id="9">9. 分布式锁</h3>
+<p>用 Redis 实现分布式锁的两种方式。</p>
+<ul>
+<li>
+<p>自己实现。定义一个 key，value 为请求唯一id，设置超时时间，setnx 操作成功则表示获得锁，业务执行完后删除 key 要校验 value（可用 lua 脚本把读和删除原子化）是不是同一个请求来源。</p>
+</li>
+<li>
+<p>使用框架 Redisson</p>
+</li>
+</ul>
+<h3 id="10-pipeline">10. pipeline</h3>
+<p>建立管道长链路，一次性处理多个命令，提高吞吐量，但不能保证原子操作</p>
+<h3 id="11">11. 缓存穿透、击穿和雪崩</h3>
+<ul>
+<li>
+<p>缓存穿透：key 对应的数据在数据源并不存在，每次针对此 key 的请求从缓存获取不到，请求都会到数据源，从而可能压垮数据源。比如用一个不存在的用户 id 获取用户信息，不论缓存还是数据库都没有，若黑客利用此漏洞进行攻击可能压垮数据库。</p>
+<ul>
+<li>采用布隆过滤器，将所有可能存在的数据哈希到一个足够大的 bitmap 中，不存在的数据会被这个 bitmap 拦截掉，从而避免了对底层存储系统的查询压力</li>
+<li>查询返回的数据为空仍然进行缓存，设置一个较短过期时间。</li>
+</ul>
+</li>
+<li>
+<p>缓存击穿：key 对应的数据存在，但在 redis 中过期，此时若有大量并发请求过来，这些请求发现缓存过期一般都会从后端 DB 加载数据并回设到缓存，这个时候大并发的请求可能会瞬间把后端DB压垮。</p>
+<ul>
+<li>使用互斥锁(mutex key)SETNX。缓存失效的时候，不立即去 load db，而是去 set 一个 mutex key，成功时，再进行 load db 的操作并回设缓存；否则，就重试整个 get 缓存的方法。</li>
+<li>缓存不会更新的热点数据可以设置永不过期</li>
+<li>利用定时线程在缓存过期前主动重新构建缓存</li>
+</ul>
+</li>
+<li>
+<p>缓存雪崩：当缓存服务器重启或者大量缓存集中在某一个时间段失效，这样在失效的时候，也会给后端系统(比如 DB)带来很大压力。</p>
+<ul>
+<li>主从+哨兵或 cluster 做高可用，提供抗压能力避免全面崩盘</li>
+<li>在原有的失效时间基础上增加一个随机值，比如1-5分钟随机，这样每一个缓存的过期时间的重复率就会降低，就很难引发集体失效的事件</li>
+<li>本地缓存（Ehcache）+ 限流降级（Hystrix）。先查本地缓存再查 Redis，大量缓存失效后的查询做限流降级，避免 MySQL 压力过大</li>
+<li>做持久化，重启快速从磁盘恢复数据而不是去查数据库</li>
+</ul>
+</li>
+</ul>
+<h3 id="12-cluster">12. 主从、哨兵和 cluster 集群</h3>
+<ul>
+<li>主从：分摊读写压力。高并发</li>
+<li>哨兵：高可用</li>
+<li>cluster 集群：兼顾以上两者</li>
+</ul>
+<h3 id="13-redis">13. Redis集群不可用（集群三主三从，至少需要三台机器，互为主从，一台服务器宕机还能用）</h3>
+<ul>
+<li>半数宕机（fail一个主节点需要一半主以上投票通过）</li>
+<li>某一结点主从全都宕机</li>
+</ul>
+<h3 id="14">14. 消息队列实现方式</h3>
+<ul>
+<li>
+<p>基于异步消息队列 List lpush-brpop(rpush-blpop)</p>
+<ul>
+<li>使用rpush和lpush操作入队列，lpop和rpop操作出队列</li>
+<li>当队列为空时，lpop和rpop会一直空轮训，消耗资源；所以引入阻塞读blpop和brpop（b代表blocking），阻塞读在队列没有数据的时候进入休眠状态</li>
+</ul>
+</li>
+<li>
+<p>PUB/SUB 订阅/发布模式</p>
+<ul>
+<li>SUBSCRIBE，用于订阅信道</li>
+<li>PUBLISH，向信道发送消息</li>
+<li>UNSUBSCRIBE，取消订阅</li>
+</ul>
+</li>
+<li>
+<p>基于 sorted set 的实现</p>
+<ul>
+<li>zadd 添加带分数元素</li>
+<li>zrange 或 zrevrange 返回有序集合，指定区间的成员。使用0，0区间来获取处于顶部的元素</li>
+<li>zrem 移除元素，消费后移除</li>
+</ul>
+</li>
+<li>
+<p>基于 stream 类型的实现。stream 是redis 5.0后新增的数据结构</p>
+</li>
+</ul>
+<h3 id="15">15. 延迟消息实现</h3>
+<p>利用 zadd 和 zrangebyscore 来实现存入和读取消息</p>
+<h3 id="16-sortes-set">16. Sortes Set(有序列表)实现，压缩列表和跳表</h3>
+<h4 id="161-ziplist">16.1. 压缩列表 ziplist</h4>
+<ul>
+<li>有序集合保存的元素数量小于128个</li>
+<li>有序集合保存的所有元素的长度小于64字节</li>
+</ul>
+<h4 id="162-skiplist">16.2. 跳表 skiplist</h4>
+<ul>
+<li>一种基于有序链表的扩展，跳表会维护多个索引链表和原链表</li>
+<li>查找次数近似于层数，时间复杂度为 O(logn)，插入、删除也为 O(logn)</li>
+<li>跳表是一种随机化的数据结构（通过抛硬币来决定插入层数）</li>
+<li>空间复杂度为 O(n)</li>
+</ul>
+<h3 id="17">17. 一致性哈希和哈希槽</h3>
+<h4 id="171-hash-0-232">17.1. 一致性哈希（一致性 hash 是一个0-2^32的闭合圆）</h4>
+<ul>
+<li>用于解决分布式缓存系统中的数据选择节点存储问题和数据选择节点读取问题以及在增删节点后减少数据缓存的消失范畴，防止雪崩的发生。</li>
+<li>顺时针找到归属的节点</li>
+</ul>
+<h4 id="172-redis-cluster-21416384">17.2. 哈希槽（redis cluster 一共有2^14=16384个槽）</h4>
+<ul>
+<li>redis cluster集群没有采用一致性哈希方案，而是采用数据分片中的哈希槽来进行数据存储与读取的。</li>
+<li>根据CRC-16(key)384的值来判断属于哪个槽区，从而判断该key属于哪个节点</li>
+</ul>
+<h3 id="18-redis">18. Redis 使用场景</h3>
+<ul>
+<li>会话缓存(Session Cache)，是 Redis 最常使用的一种情景</li>
+<li>全页缓存(FPC)</li>
+<li>用作网络版集合和队列</li>
+<li>排行榜和计数器，Redis 在内存中对数字递增、递减的操作实现的非常好。Set 和 Sorted Set 使得我们在执行这些操作的时候非常简单</li>
+<li>发布和订阅</li>
+<li>如果对丢失部分数据不敏感的话当数据库用</li>
+</ul>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="Footer" >
+      
+        
+        <a href="../Spring/" class="md-footer__link md-footer__link--prev" aria-label="Previous: Spring" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Previous
+              </span>
+              Spring
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../MQ/" class="md-footer__link md-footer__link--next" aria-label="Next: MQ" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                Next
+              </span>
+              MQ
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../../..", "features": ["navigation.tabs", "toc.follow"], "search": "../../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version.title": "Select version"}}</script>
+    
+    
+      <script src="../../../../assets/javascripts/bundle.0238f547.min.js"></script>
+      
+        <script src="../../../../assets/js/mathjax.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
