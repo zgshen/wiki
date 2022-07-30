@@ -36,7 +36,7 @@ IoC 作用：
 - 资源集中管理
 - 功能可复用
 
-### 5. Spring的 依赖注入方式
+### 5. Spring的依赖注入方式
 
 #### 5.1. 构造器注入
 
@@ -73,7 +73,7 @@ public void setDependencyA(DependencyA dependencyA) {
 public void setDependencyB(DependencyB dependencyB) {
     this.dependencyB = dependencyB;
 }
-````
+```
 
 setter 注入比较灵活，可以选择性地注入需要的对象。
 
