@@ -50,8 +50,6 @@
 
 - 持久性(durability)：事务成功之后，对数据库的操作必须永久保存下来，必须生效。即使系统奔溃，也应能恢复到事物成功后的状态。
 
-
-
 ### 5. 数据库中的悲观锁和和乐观锁
 
 悲观锁：假设每一次拿数据，都有认为会被修改。例如给数据库的行或表上锁，看以下 for update 的例子。此外注意 for update 要用在索引上，不然会锁表。
@@ -131,7 +129,7 @@ MyISAM 使用非聚簇索引，索引与行记录是分开存储的，其主键�
 #### 8.3. 对比
 
 下图示清晰的显示了聚簇索引和非聚簇索引的差异  
-![mysql](https://raw.githubusercontent.com/zgshen/code-note/master/doc/images/mysql.png)
+![mysql](https://raw.githubusercontent.com/zgshen/code-note/master/java/doc/images/mysql.png)
 
 ### 9. MyISAM 和 InnoDB区别
 

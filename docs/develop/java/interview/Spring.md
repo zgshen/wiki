@@ -77,7 +77,7 @@ public void setDependencyB(DependencyB dependencyB) {
 
 setter 注入比较灵活，可以选择性地注入需要的对象。
 
-#### 5.3. Filed 注入
+#### 5.3. Field 注入
 
 属性注入，在 bean 变量上使用注解进行依赖注入，本质上是通过反射的方式直接注入到 field。这应该是平时开发见到最多的的一种方式。
 

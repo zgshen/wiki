@@ -362,7 +362,7 @@ lrwx------ 1 root root 64 Apr 24 09:01 255 -> /dev/pts/0
 IO 对文件拷贝操作：硬盘 -->内核空间 -->用户线程空间 -->内核空间 -->硬盘  
 IO 对 socket 操作: scoket -->内核空间 -->用户线程空间 -->内核空间 -->socket
 
-![kernal-user-sapce](https://raw.githubusercontent.com/zgshen/code-note/master/doc/images/kernal-user-sapce.png)
+![kernal-user-sapce](https://raw.githubusercontent.com/zgshen/code-note/master/java/doc/images/kernal-user-sapce.png)
 
 [参考链接](https://zhuanlan.zhihu.com/p/148673095)
 
