@@ -239,7 +239,7 @@ class RealSubject implements Subject{
 ```
 
 ### 10. Spring MVC
-![](https://raw.githubusercontent.com/zgshen/code-note/master/doc/images/SpringMVC.jfif)
+![](https://raw.githubusercontent.com/zgshen/code-note/master/java/doc/images/SpringMVC.jfif)
 
 #### 10.1. 工作原理
 
