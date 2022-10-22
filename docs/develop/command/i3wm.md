@@ -47,6 +47,18 @@ bindsym $mod+Tab exec i3lock # Win+Tab 锁屏
 
 ### 快捷键
 
+几个常用的：
+```
+win+shift+? 帮助
+win+tab 切换工作空间
+win+数字 切换到指定工作空间，不存在就创建
+win+t 切换窗口布局
+win+space 应用管理
+win+shift+f 浮动窗口切换
+win+ctrl+m 后台暂存窗口
+win+ctrl+a 切换出暂存窗口
+```
+
 regolith 快捷键 [https://regolith-linux.org/docs/reference/keybindings/](https://regolith-linux.org/docs/reference/keybindings/)
 
 连锁屏休眠啥都有了，上面的 i3lock 根本不用安装了。
