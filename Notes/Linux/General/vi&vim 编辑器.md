@@ -53,3 +53,14 @@
 https://blog.csdn.net/u011118321/article/details/85095670
 
 https://cloud.tencent.com/developer/article/1647068
+
+### 多行编辑
+
+ctrl + v 进入 visual block 模式。
+
+- 多行部分列删除：光标移动选中范围，按 d 键删除。
+- 多行全部删除：esc 模式下，比如输入 `:1,5d` 回车，删除的是1到5行。
+- 行首插入：若是行首多行插入，光标选中多行，按 shift + i 进入编辑，输入文本，按 esc 退出应用到多行。
+- 行尾插入：$ (也就是shift + 4)跳到行尾，移动光标选中多行，shift + a 进入编辑，输入文本，按 esc 退出应用到多行。
+
+

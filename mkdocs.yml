@@ -1,15 +1,27 @@
 site_name: zguishen's wiki
 theme:
-    name: material
-    features:
-      - navigation.tabs
-      - toc.follow
-    palette:
-      primary: indigo
-    favicon: https://zguishen.com/favicon.ico?v=1.02
-    font:
-      text: Roboto
-      code: Monaco
+  name: material
+  features:
+    - navigation.tabs
+    - toc.follow
+  palette:
+    # primary: indigo
+    # Palette toggle for light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      toggle:
+        icon: material/brightness-7
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
+  favicon: https://zguishen.com/favicon.ico?v=1.02
+  font:
+    text: Roboto
+    code: Monaco
 extra_css:
   - Assets/css/extra.css
 extra_javascript:
