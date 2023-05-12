@@ -13,7 +13,22 @@ sudo apt install tmux -y
 tmux set mouse on
 ```
 
+也可在 ~/.tmux.conf 中设置：
+
+```bash
+set-option -g mouse on
+```
+
 ### 基本操作
+
+##### 复制粘贴
+
+开启鼠标支持后，在 tmux 会话中操作跟一般终端操作一样，也可以用鼠标选择文本复制，滚轮中键粘贴。
+
+不过由于 tmux 有自己的缓存区，不与系统级别的复制粘贴共通，在 tmux 复制的文本是无法在其他应用粘贴的。
+
+正确的方法是先按住 shift 键，再用鼠标选中复制，就能粘贴到其他应用了，按住的同时也可以右键选择其他操作。
+![](Assets/Pasted%20image%2020230512182729.png)
 
 ##### session 管理
 
@@ -59,6 +74,10 @@ PREFIX d
 
 prefix 键是 tmux 的前缀快捷键，默认是 ctrl+b，可在 ~/.tmux.conf 中修改，比如 `set -g prefix C-a` 将 prefix 键修改成 ctrl+a。
 
+### 窗口和面板管理
+
+创建一个 session 同时就会进入默认一个 tmux 窗口（window），可以通过 `prefix c` 创建多个窗口，每个窗口面板又可以拆分成水平或垂直的多个子窗口。
+
 #### 窗口管理
 
 拆分窗口，已经开启鼠标支持的可以拖动窗口大小
@@ -101,10 +120,16 @@ exit 或者 prefix &
 
 切割面板
 ```bash
+# 显示当前窗口面板的子窗口排序
+prefix q
 # 垂直切割
 prefix %
 # 水平切割
 prefix "
+```
+
+在面板上按 prefix 键之后就可以通过上下左右箭头跳到另外子窗口。
+```bash
 # 面板间来回切换
 prefix o
 # 最大化或者恢复面板
