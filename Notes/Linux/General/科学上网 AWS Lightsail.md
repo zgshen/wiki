@@ -27,3 +27,13 @@ REALITY 现在有很多客服端都支持了:
 - iOS：[Shadowrocket](https://apps.apple.com/ca/app/shadowrocket/id932747118)
 - Android：[v2rayNG](https://github.com/2dust/v2rayNG)
 - PC：[Clash Verge](https://github.com/zzzgydi/clash-verge)
+
+### 开启 BBR
+
+```bash
+wget --no-check-certificate -O /opt/bbr.sh https://github.com/teddysun/across/raw/master/bbr.sh
+chmod 755 /opt/bbr.sh
+/opt/bbr.sh 
+```
+
+脚本了来自 [https://teddysun.com/489.html](https://teddysun.com/489.html)

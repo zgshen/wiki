@@ -1,6 +1,6 @@
 ### 基本操作
 
-![](Assets/Pasted%20image%2020220711110643.png)
+![](../Assets/Pasted%20image%2020220711110643.png)
 
 ### 保存和退出操作
 
