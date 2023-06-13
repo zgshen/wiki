@@ -36,4 +36,4 @@ chmod 755 /opt/bbr.sh
 /opt/bbr.sh 
 ```
 
-脚本了来自 [https://teddysun.com/489.html](https://teddysun.com/489.html)
+脚了来自 [https://teddysun.com/489.html](https://teddysun.com/489.html)
