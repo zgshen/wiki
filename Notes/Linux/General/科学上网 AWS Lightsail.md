@@ -23,6 +23,14 @@ Host aws-debian
 
 嫌麻烦用就用别人做好的脚本（怕有问题就先看下脚本内容），参考 [https://www.v2ray-agent.com/archives/1680104902581](https://www.v2ray-agent.com/archives/1680104902581) 的第二种安装方式，比较简单，域名默认就行，端口指定一个，记得到后台防火墙添加上。
 
+```bash
+wget -P /root -N --no-check-certificate "https://raw.githubusercontent.com/mack-a/v2ray-agent/master/install.sh" && chmod 700 /root/install.sh && /root/install.sh
+```
+
+选择 `5.REALITY管理` 按提示操作。
+
+退出之后可以使用 `vasma` 命令重新进入管理。
+
 REALITY 现在有很多客服端都支持了:
 - iOS：[Shadowrocket](https://apps.apple.com/ca/app/shadowrocket/id932747118)
 - Android：[v2rayNG](https://github.com/2dust/v2rayNG)
@@ -36,4 +44,4 @@ chmod 755 /opt/bbr.sh
 /opt/bbr.sh 
 ```
 
-脚了来自 [https://teddysun.com/489.html](https://teddysun.com/489.html)
+脚本来自 [https://teddysun.com/489.html](https://teddysun.com/489.html)
