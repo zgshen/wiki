@@ -37,7 +37,6 @@ markdown_extensions:
 docs_dir: Notes
 plugins:
   - social:
-      cards_layout: default/invert
-      cards_layout_options:
-        font_family: Noto Sans SC
+      enabled: true
+site_description: ''
 
