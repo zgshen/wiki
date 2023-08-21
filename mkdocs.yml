@@ -35,3 +35,9 @@ markdown_extensions:
   - pymdownx.arithmatex:
       generic: true
 docs_dir: Notes
+plugins:
+  - social:
+      cards_layout: default/invert
+      cards_layout_options:
+        font_family: Noto Sans SC
+
