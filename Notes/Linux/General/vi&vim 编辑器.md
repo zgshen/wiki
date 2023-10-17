@@ -115,3 +115,6 @@ Vim默认最多只能打开10个标签页。你可以用set tabpagemax=15改变�
 https://blog.csdn.net/u011118321/article/details/85095670
 
 https://cloud.tencent.com/developer/article/1647068
+
+## 相关
+[neovim 的使用](../Application/nvim.md)
