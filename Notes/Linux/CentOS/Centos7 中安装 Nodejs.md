@@ -39,3 +39,31 @@ ln -s /usr/local/nodejs/bin/node /usr/local/bin
 node -v
 npm -v
 ```
+
+### **五 升级更新**
+
+安装 n 包
+
+```shell
+npm install -g n
+```
+
+你需要全局安装此包，因为它在根目录管理 Node 版本。
+
+安装新版本的 Node
+
+```shell
+n lts
+n latest
+```
+
+上面两个命令安装长期支持和最新版本的 Node.js。
+
+**删除以前安装的版本**
+
+```shell
+n prune
+```
+
+此命令会删除以前安装的版本的缓存版本，只保留最新安装的版本。
+
