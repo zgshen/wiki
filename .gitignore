@@ -1,7 +1,8 @@
-wiki.sh
-logs/
-Notes/Private/
-Daily/
-Template/
-.obsidian/
-.cache/
+/*
+!/Notes
+!/github
+!.gitignore
+!README.md
+!mkdocs.yml
+!wiki.sh
+
