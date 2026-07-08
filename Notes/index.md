@@ -14,7 +14,6 @@ Wiki 网站，主要用来记录从笔记整理出来的成文的、又不想发
 
 个人的其他服务：
 
-- [https://zguishen.com](https://zguishen.com) 个人博客；
-- [https://notion.zguishen.com](https://notion.zguishen.com) Notion主页，记录书影音游戏；
-- [https://nav.zguishen.com](https://nav.zguishen.com) 导航站。
+- [https://zgshen.github.io/](https://zgshen.github.io) 个人博客；
+- [https://zguishen.notion.site](https://zguishen.notion.site/9a91957659094e0c91dfb35ff313853b) Notion主页，记录书影音游戏；
 
