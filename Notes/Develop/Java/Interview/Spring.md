@@ -40,11 +40,11 @@ IoC 作用：
 
 #### 5.1. 构造器注入
 
-将被依赖对象通过构造函数的参数注入给依赖对象，并且在初始化对象的时候注入。Spring 推荐的注入方式，适合强制依赖用法。fi
+将被依赖对象通过构造函数的参数注入给依赖对象，并且在初始化对象的时候注入。Spring 推荐的注入方式，适合强制依赖用法。
 
 ```java
 private DependencyA dependencyA;
-private DependencyB dependencyB;;
+private DependencyB dependencyB;
 
 @Autowired
 public DI(DependencyA dependencyA, DependencyB dependencyB) {
@@ -93,7 +93,7 @@ Filed 注入优点是最简单方便的方式，但是 Spring 官方不推荐使
 
 ### 6. 用到哪些设计模式
 
-- 工厂模式：Spring 使用工厂模a式可以通过 `BeanFactory` 或 `ApplicationContext` 创建 bean 对象；
+- 工厂模式：Spring 使用工厂模式可以通过 `BeanFactory` 或 `ApplicationContext` 创建 bean 对象；
 - 单例模式：Spring 中 bean 的默认作用域就是 singleton(单例)的；
 - 代理模式：Spring AOP 就是基于动态代理的；
 - 观察者模式：Spring 事件驱动模型就是观察者模式很经典的一个应用。`ApplicationListener` 监听器；

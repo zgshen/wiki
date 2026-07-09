@@ -142,7 +142,7 @@ SCAN cursor [MATCH pattern] [COUNT count]
 #### 17.2. 哈希槽（redis cluster 一共有2^14=16384个槽）
 
 - redis cluster集群没有采用一致性哈希方案，而是采用数据分片中的哈希槽来进行数据存储与读取的。
-- 根据CRC-16(key)384的值来判断属于哪个槽区，从而判断该key属于哪个节点
+- 根据CRC-16(key) % 16384的值来判断属于哪个槽区，从而判断该key属于哪个节点
 
 ### 18. Redis 使用场景
 

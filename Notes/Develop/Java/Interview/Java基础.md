@@ -310,8 +310,8 @@ Class 和 `java.lang.reflect` 一起对反射提供了支持，`java.lang.reflec
 
 ### 7.1. Java 中有几种类型的流
 
-- 字节流：继承自 inputStream 和 OutputStream
-- 字符流：继承自 InputSteamReader 和 OutputStreamWriter
+- 字节流：继承自 InputStream 和 OutputStream
+- 字符流：继承自 InputStreamReader 和 OutputStreamWriter
 
 ### 7.2. 字符流和字节流有什么区别
 
@@ -333,7 +333,7 @@ Class 和 `java.lang.reflect` 一起对反射提供了支持，`java.lang.reflec
 
 ### 7.4. 序列化的实现
 
-将需要被序列化的类实现 Serialize 接口，没有需要实现的方法，此接口只是为了标注对象可被序列化的，然后使用一个输出流（如：FileOutputStream）来构造一个ObjectOutputStream（对象流）对象，再使用 ObjectOutputStream 对象的 write(Object obj) 方法就可以将参数 obj 的对象写出。
+将需要被序列化的类实现 Serializable 接口，没有需要实现的方法，此接口只是为了标注对象可被序列化的，然后使用一个输出流（如：FileOutputStream）来构造一个ObjectOutputStream（对象流）对象，再使用 ObjectOutputStream 对象的 write(Object obj) 方法就可以将参数 obj 的对象写出。
 
 ### 7.5. Linux 的文件描述符
 
@@ -365,7 +365,7 @@ lrwx------ 1 root root 64 Apr 24 09:01 255 -> /dev/pts/0
 
 举例磁盘和 socket 的 IO 操作：  
 IO 对文件拷贝操作：硬盘 -->内核空间 -->用户线程空间 -->内核空间 -->硬盘  
-IO 对 socket 操作: scoket -->内核空间 -->用户线程空间 -->内核空间 -->socket
+IO 对 socket 操作: socket -->内核空间 -->用户线程空间 -->内核空间 -->socket
 
 ![kernal-user-sapce](https://raw.githubusercontent.com/zgshen/code-note/master/doc/images/kernal-user-sapce.png)
 
