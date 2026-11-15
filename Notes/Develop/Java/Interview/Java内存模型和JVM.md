@@ -96,7 +96,7 @@ public class Singleton {
 - 运行时数据区
 - 执行引擎
   
-  ![img](https://raw.githubusercontent.com/zgshen/code-note/master/doc/images/jvm-struct.png)
+  ![img](Assets/jvm-struct.png)
 ### 2.2. 运行时数据区
 #### 2.2.1. 虚拟机栈
 
@@ -143,7 +143,7 @@ JDK 1.8及之后永久代被彻底移除了，取代的是元空间，元空间�
 #### 2.3.1. 常量池
 
 常量池，即 class 文件常量池，是 class 文件的一部分，用于保存编译时确定的数据；
-![常量池](https://raw.githubusercontent.com/zgshen/code-note/master/doc/images/constant.png)
+![常量池](Assets/constant.png)
 #### 2.3.2. 运行时常量池
 
 类加载后，常量池信息就会放入运行时常量池，并将常量池内符号引用替换成直接引用。运行时常量池是动态的，程序运行期间也可能产生新的常量，这些常量被放到运行时常量池中。
@@ -195,7 +195,7 @@ JDK1.8 使用元空间替代永久区来实现方法区，此时运行时常量�
 ## 3. 类加载机制
 ### 3.1. 类加载过程
 
-![类加载过程](https://raw.githubusercontent.com/zgshen/code-note/master/doc/images/classinit.png)
+![类加载过程|569](Assets/classinit.png)
 
 其中验证，准备，解析一般合称链接。
 - 加载：
@@ -209,7 +209,7 @@ JDK1.8 使用元空间替代永久区来实现方法区，此时运行时常量�
   触发条件包括：创建类实例时，访问类静态变量和静态方法时，使用 Class.forName 反射类时或者某个子类初始化时。
 ### 3.2. 类加载器
 
-![类加载器](https://raw.githubusercontent.com/zgshen/code-note/master/doc/images/classload.png)
+![类加载器](Assets/classload.png)
 - 启动类加载器 BootstrapClassLoader  rt.jar
 - 扩展类加载器 ExtClassLoader  ext 目录下扩展 jar
 - 应用程序类加载器 AppClassLoader  Classpath 上的类
@@ -273,7 +273,7 @@ Java 对象由三个部分组成：对象头、实例数据、对齐填充。
 ### 4.5. GC 回收机制
 - #### 4.5.1. 详细说明
   
-  ![img](https://raw.githubusercontent.com/zgshen/code-note/master/doc/images/jvm-gc.png){:height 32, :width 43}
+  ![img|551](Assets/jvm-gc.png)
   
   年轻代分为 Eden 区和 Survivor 区（两块分别为 From Survivor  和 To Survivor 交替使用，哪个被回收了就由 From 变成 To），比例 Eden:From:To = 8:1:1。
   
